@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import "./styles.css"; // Update the path to styles.css
-
+import "./styles.css";
 const Login = () => {
   const navigate = useNavigate();
   const { role } = useParams();
@@ -56,9 +55,9 @@ const Login = () => {
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div className="flex flex-col items-center">
             <div className="mb-4">
-              <button type="submit" className="">
+              <Link to="/Home" className="auth-button">
                 Login
-              </button>
+              </Link>
             </div>
             <div className="flex justify-between w-full">
               <div>

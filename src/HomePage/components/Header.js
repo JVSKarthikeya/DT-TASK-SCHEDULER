@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import './Header.css';
-import Dlogo from '../assets/images/Dlogo.png';
-import { FaUser, FaQuestionCircle } from 'react-icons/fa';
+import React, { useState } from "react";
+import "./Header.css";
+import Dlogo from "../assets/images/Dlogo.png";
+// import { FaUser, FaQuestionCircle } from 'react-icons/fa';
 
 const Header = () => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
@@ -14,9 +14,9 @@ const Header = () => {
     <header className="header">
       <img src={Dlogo} alt="Logo" className="logo" />
       <div className="icons">
-        <FaQuestionCircle className="icon" />
+        {/* <FaQuestionCircle className="icon" /> */}
         <div className="user-menu" onClick={toggleDropdown}>
-          <FaUser className="icon" />
+          {/* <FaUser className="icon" /> */}
           {dropdownVisible && (
             <div className="profile-dropdown">
               <ul>
