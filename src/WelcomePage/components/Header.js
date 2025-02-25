@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.css";
 import Dtlogo from "../assets/images/DtLogo.png";
-import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     <header className="header">
@@ -10,12 +10,8 @@ const Header = () => {
         {/* <div className="title">TASK ScheduER</div> */}
       </div>
       <div className="header-right">
-        <Link to="/login" className="auth-button">
-          Login
-        </Link>
-        <Link to="/Register" className="auth-button">
-          Register
-        </Link>
+        <button className="auth-button">Login</button>
+        <button className="auth-button">Register</button>
       </div>
     </header>
   );

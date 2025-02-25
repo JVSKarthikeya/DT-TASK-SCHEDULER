@@ -51,14 +51,8 @@ const Register = () => {
     }
 
     if (!formIsValid) {
-      console.log("Form is not valid:", newErrors);
       return;
     }
-
-    // Save user details to localStorage
-    localStorage.setItem("username", formData.Username);
-    localStorage.setItem("email", formData.Email);
-    localStorage.setItem("password", formData.Password);
 
     // Redirect to the login page after successful registration
     setMessage(`Registration Successful`);
@@ -99,9 +93,44 @@ const Register = () => {
               onChange={handleChange}
             />
           </div>
-          <button type="submit" className="registerbtn">
-            Register
-          </button>
+          {message && (
+            <>
+              <div className="msg">
+                {message === "User already exists! Login" && (
+                  <div className="flex justify-between w-full">
+                    <button type="submit">SignIn</button>
+                    <div className="ml-auto flex items-center">
+                      <Link
+                        to="/"
+                        className="primary hover:text-blue-700 flex items-center py-2 px-4 rounded-md"
+                      >
+                        Login here
+                      </Link>
+                    </div>
+                  </div>
+                )}
+              </div>
+              <div className="msg">
+                {message === "UserName already exists! Try another" && (
+                  <button type="submit" className="registerbtn">
+                    SignIn
+                  </button>
+                )}
+              </div>
+            </>
+          )}
+          <div className="msg">
+            {!message && (
+              <button type="submit" className="registerbtn">
+                SignIn
+              </button>
+            )}
+            {message === "Verify the details again" && (
+              <button type="submit" className="registerbtn">
+                Register
+              </button>
+            )}
+          </div>
         </form>
       </div>
     </div>
